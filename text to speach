@@ -2,7 +2,7 @@
 // https://sourceforge.net/projects/espeak/files/espeak/espeak-1.48/setup_espeak-1.48.04.exe/download
 // or
 // https://espeak.sourceforge.net/download.html
-// 1. Install 
+// 1. Install
 // 2. files >> program files(x86)>>espeak
 // 3. cut (espeak.exe)>>paste in folder[vscode]
 // 4. add this in your program
@@ -15,63 +15,32 @@
 
 #include <iostream>
 using namespace std;
-
 int main()
 {
-    char c;
-    cout << "Enter a alphabet :-";
-    cin >> c;
 
-    switch (c)
+    char alphabet;
+    cout << "enter alphabet : ";
+    cin >> alphabet;
+
+    if (alphabet == 'a' || alphabet == 'e' || alphabet == 'i' || alphabet == 'o' || alphabet == 'u' || alphabet == 'A' || alphabet == 'E' || alphabet == 'I' || alphabet == 'O' || alphabet == 'U')
     {
-    case 'a':
-        cout << "it's a vovel";
-        break;
 
-    case 'e':
-        cout << "it's a vovel";
-        break;
-
-    case 'i':
-        cout << "it's a vovel";
-        break;
-    case 'o':
-        cout << "it's a vovel";
-        break;
-
-    case 'u':
-        cout << "it's a vovel";
-        break;
-
-    case 'A':
-        cout << "it's a vovel";
-        break;
-    case 'E':
-        cout << "it's a vovel";
-        break;
-
-    case 'I':
-        cout << "it's a vovel";
-        break;
-
-    case 'O':
-        cout << "it's a vovel";
-        break;
-    case 'U':
-        cout << "it's a vovel";
-
-
-        break;
-
-    default:
-        string phrase = "it is a consonent.";
-        string accent = "en-us"; // For Hindi accent
-        int speed = 100;      // Adjust the speed as needed
+        string phrase = "it is a vowel.";
+        string accent = "en-us"; // For accent
+        int speed = 100;         // Adjust the speed as needed
         string command = "espeak -s " + to_string(speed) + " -v " + accent + " \"" + phrase + "\"";
         const char *charCommand = command.c_str();
         system(charCommand);
+    }
+    else
+    {
 
-        break;
+        string phrase = "it is a consonent.";
+        string accent = "en-us"; // For accent
+        int speed = 100;         // Adjust the speed as needed
+        string command = "espeak -s " + to_string(speed) + " -v " + accent + " \"" + phrase + "\"";
+        const char *charCommand = command.c_str();
+        system(charCommand);
     }
 
     return 0;
